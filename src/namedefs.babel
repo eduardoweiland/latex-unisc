@@ -1,0 +1,104 @@
+%==============================================================================
+% unisc.cls - classe para documentos com padrões da UNISC
+% Parcialmente baseado no antigo modelo do dinfunisc e no modelo do iiufrgs
+%
+% Copyright (C) 2015 Eduardo Weiland <eduardoweiland@mx2.unisc.br>
+%
+% This work may be distributed and/or modified under the
+% conditions of the LaTeX Project Public License, either version 1.3
+% of this license or (at your option) any later version.
+% The latest version of this license is in
+%   http://www.latex-project.org/lppl.txt
+% and version 1.3 or later is part of all distributions of LaTeX
+% version 2005/12/01 or later.
+%
+% This work has the LPPL maintenance status `maintained'.
+% 
+% The Current Maintainer of this work is Eduardo Weiland.
+%
+% This work consists of the files unisc.cls, namedefs.babel, tc.def
+% and propostatc.def.
+%==============================================================================
+
+%
+% definições para textos em português
+%
+\@namedef{captionsbrazilian}{%
+  \def\uniscname{Universidade de Santa Cruz do Sul}%
+  \def\bibname{Refer{\^e}ncias}%
+  \def\abstractname{Resumo}%
+  \def\appendixname{Ap{\^e}ndice}%
+  \def\contentsname{Sum{\'a}rio}%
+  \def\listfigurename{Lista de Ilustra\c{c}\~{o}es}%
+  \def\listtablename{Lista de Tabelas}%
+  \def\listdefname{Lista de Defini\c{c}\~{o}es}%
+  \def\listtheoremsname{Lista de Teoremas}%
+  \def\sourcename{Fonte}%
+  \def\corollaryname{Corol\'{a}rio}%
+  \def\propositionname{Proposi\c{c}\~{a}o}%
+  \def\definitionname{Defini\c{c}\~{a}o}%
+  \def\conjecturename{Conjectura}%
+  \def\examplename{Exemplo}%
+  \def\exercisename{Exerc\'{\i}cio}%
+  \def\propertyname{Propriedade}%
+  \def\remarknamek{Observa\c{c}\~{a}o}%
+  \def\lemmaname{Lema}%
+  \def\theoremname{Teorema}%
+  \def\proofname{Prova}%
+  \def\figurename{Figura}%
+  \def\tablename{Tabela}%
+  \def\reviewername{Avaliador}%
+  \def\reviewersname{Avaliadores}%
+  \def\reviewernamef{Avaliadora}%
+  \def\advisorname{Orientador}%
+  \def\advisornamef{Orientadora}%
+  \def\coadvisorname{Co-orientador}%
+  \def\coadvisornamef{Co-orientadora}%
+  \def\listabbrvname{Lista de Abreviaturas}%
+  \def\listsymbolname{Lista de S{\'\i}mbolos}%
+  \def\annexname{Anexo}%
+  \def\keywordsname{Palavras-chave}%
+  \def\byname{por}%
+  \def\dissname{Disserta{\c{c}}{\~a}o (mestrado)}%
+  \def\dissspecificinfo{%
+    Disserta{\c{c}}{\~a}o apresentada como requisito parcial\\
+    para a obten{\c{c}}{\~a}o do grau de\\
+    Mestre em Ci{\^e}ncia da Computa{\c{c}}{\~a}o
+  }%
+  \def\tesename{Tese (doutorado)}%
+  \def\tesespecificinfo{%
+    Tese apresentada como requisito parcial\\
+    para a obten{\c{c}}{\~a}o do grau de\\
+    Doutor em Ci{\^e}ncia da Computa{\c{c}}{\~a}o
+  }%
+  \def\planodoutoradospecificinfo{Plano de Curso para Doutorado}%
+  \def\proptesespecificinfo{Proposta de Tese de Doutorado}%
+  \def\proptcspecificinfo{Proposta para Trabalho de Conclus{\~a}o}%
+  \def\tcname{Trabalho de Conclus{\~a}o}%
+  \def\tcspecificinfo{%
+    Trabalho de Conclus{\~a}o apresentado ao Curso de Ci{\^e}ncia da
+    Computa{\c{c}}{\~a}o da Universidade de Santa Cruz do Sul,
+    como requisito parcial para a obten{\c{c}}{\~a}o do t{\'i}tulo de
+    Bacharel em Ci{\^e}ncia da Computa{\c{c}}{\~a}o{.}
+  }%
+  \def\temppropname{(T{\'i}tulo Provis{\'o}rio)}
+  \def\rpname{Relat{\'o}rio de Pesquisa}%
+  \def\financname{{\'O}rg{\~a}os Financiadores}%
+  \def\especname{Monografia (especializaç{\~a}o)}%
+  \def\especspecificinfo{%
+    Monografia de Conclus{\~a}o de Curso apresentada como
+    requisito parcial para a obtenção do grau de Especialista
+  }%
+  \def\coordname{Coordenador do Curso}%
+}
+\@namedef{datebrazilian}{%
+  \def\monthname{%
+    \ifcase\month\or%
+      janeiro\or fevereiro\or mar{\c{c}}o\or abril\or%
+      maio\or junho\or julho\or agosto\or setembro\or%
+      outubro\or novembro\or dezembro%
+    \fi%
+  }%
+  \def\unisc@date{\@publmonth\ de~\@publyear}%
+  \def\unisc@dateday{\@publday\ de~\@publmonth\ de~\@publyear}%
+}
