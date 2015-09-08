@@ -28,6 +28,10 @@ Para instalação desses pacotes no Fedora 22, o comando é:
 
     sudo dnf install texlive-xargs texlive-tools texlive-chngcntr texlive-setspace texlive-ccaption texlive-times texlive-psnfss texlive-glossaries texlive-titlesec texlive-geometry texlive-hyperref texlive-abntex2
 
+Para instalação no Ubuntu/Mint/Debian e derivados, o comando é:
+
+    sudo apt-get install texlive-latex-base texlive-latex-recommended texlive-latex-extra texlive-publishers
+
 Para outros sistemas o nome dos pacotes e a forma de instalação pode ser diferente.
 
 
