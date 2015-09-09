@@ -195,7 +195,6 @@
 
 \newcommand{\makecapa}{%
   \begin{titlepage}
-    %pagina generica
     \vspace*{-1cm}
     \noindent\@topboxcapa\\
     \par
@@ -205,58 +204,6 @@
     \vspace*{26mm}
   \end{titlepage}
   \clearpage
-
-  \begin{titlepage}
-    %pagina do orientador
-    \vspace*{-1cm}
-    \noindent\@topboxcapa\\
-    \vspace*{13cm}
-    \@ifundefined{@advisor}{}{
-      \begin{center}
-        \titlepagecapaorientador
-      \end{center}
-      \vspace*{3cm}
-    }
-    \centerline{\@city}
-    \centerline{\@publyear}
-  \end{titlepage}
-  \clearpage
-
-  \@ifundefined{@coadvisor}{}{
-    \begin{titlepage}
-      %pagina do co-orientador
-      \vspace*{-1cm}
-      \noindent\@topboxcapa\\
-      \vspace*{15cm}
-      \@ifundefined{@coadvisor}{}{
-        \begin{center}
-          \titlepagecapacoorientador
-        \end{center}
-        \vspace*{3cm}
-      }
-      \centerline{\@city}
-      \centerline{\@publyear}
-    \end{titlepage}%
-    \clearpage
-  }
-
-  \@ifundefined{@reviewera}{}{
-    \begin{titlepage}
-      \gdef\@reviewer{\@reviewera}
-      \gdef\@reviewernamethis{\@reviewernamethisa}
-      \thetitlepagecapa
-    \end{titlepage}%
-    \clearpage
-  }%
-
-  \@ifundefined{@reviewerb}{}{
-    \begin{titlepage}
-      \gdef\@reviewer{\@reviewerb}
-      \gdef\@reviewernamethis{\@reviewernamethisb}
-      \thetitlepagecapa
-    \end{titlepage}%
-    \clearpage
-  }%
 }
 
 \newcommand{\thetitlepagecapa}{%
