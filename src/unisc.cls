@@ -439,7 +439,10 @@
   \vspace{12pt}
 }
 \def\@schapter#1{%
-  \if@aftertoc\addcontentsline{toc}{chapter}{\uppercase{#1}}\fi%
+  \if@aftertoc%
+    \addcontentsline{toc}{chapter}{\uppercase{#1}}%
+    \pagestyle{unisc}\let\ps@plain\ps@unisc%
+  \fi%
   \addtocontents{lof}{\protect\addvspace{10\p@}}%
   \addtocontents{lot}{\protect\addvspace{10\p@}}%
   \@makeschapterhead{#1}\@afterheading
