@@ -20,4 +20,30 @@
 %==============================================================================
 
 \ProvidesFile{tc.def}[2015/07/09 v1.0 Trabalho de Conclusao]
+
 \newcommand{\titlepagespecificinfo}{\tcspecificinfo}
+
+\newcommand{\titlepageadvisorinfo}{%
+  \hspace*{\fill}\makebox[.53\textwidth][l]{%
+    \parbox[b]{8.5cm}{%
+      \@ifundefined{@advisor}{}{\@advisornamethis:~\@advisor\\}
+      \@ifundefined{@coadvisor}{}{\@coadvisornamethis:~\@coadvisor\\}
+    }
+  }
+  \vfill
+}
+
+\newcommand{\titlepagedate}{%
+  \centerline{\@city}
+  \centerline{\@publyear}
+}
+
+\newcommand{\titlewinboxcontent}{%
+  \@authora\\
+  \@ifundefined{@authorb}{}{\@authorb\\}%
+  \@ifundefined{@authorc}{}{\@authorc\\}%
+  \@ifundefined{@authord}{}{\@authord\\}%
+  \vspace{\stretch{3}}
+  {\textbf{\MakeUppercase{\@title}}\par}
+  \vfill
+}

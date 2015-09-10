@@ -187,7 +187,6 @@
 
 %==============================================================================
 % Definição das capas
-% gera as capas pro orientador, co-orientador e banca.
 %==============================================================================
 \newlength{\titlepagewinwidth}\setlength{\titlepagewinwidth}{160mm}
 \newlength{\titlepagewinheight}\setlength{\titlepagewinheight}{110mm}
@@ -206,20 +205,6 @@
   \clearpage
 }
 
-\newcommand{\thetitlepagecapa}{%
-  \vspace*{-1cm}
-  \setstretch{1.0}
-  \noindent\@topboxcapa\\
-  \vspace*{13cm}
-  \@ifundefined{@reviewer}{}{
-    \begin{center}
-      \titlepagecapabanca
-    \end{center}
-    \vspace*{3cm}
-  }
-  \centerline{\@city}
-  \centerline{\@publyear}
-}
 \def\@topboxcapa{%
   \parbox[t]{\textwidth}{%
     \centering%
@@ -268,7 +253,7 @@
   \begin{titlepage}
     \thetitlepage
   \end{titlepage}%
-  \clearpage
+  \clearpage%
   \setcounter{page}{2}%
 }
 \newcommand{\thetitlepage}{%
@@ -276,7 +261,6 @@
   \noindent\@topbox\\
   \vfill
   \vfill
-  %\vfill
   \@ifundefined{titlepagespecificinfo}{}{
     \hspace*{\fill}\makebox[.53\textwidth][l]{%
       \parbox[b]{8.5cm}{\setstretch{1.0}\titlepagespecificinfo}%
@@ -288,40 +272,25 @@
     \linebreak
   }
   \@ifundefined{@advisor}{}{
-    \hspace*{\fill}\makebox[.53\textwidth][l]{%
-      \parbox[b]{8.5cm}{\titlepageadvisorinfo}
-    }
-    \vfill
+    \titlepageadvisorinfo
   }
-  \centerline{\@city}
-  \centerline{\@publyear}
+  \titlepagedate
 }
 \def\@topbox{%
   \parbox[t]{\textwidth}{%
     \centering%
     \vbox to \titlepagewinvoffset{%
-      %\titlepagetopinfo
-      \vfill\setstretch{1.5}\@winbox
+      \@ifundefined{titlepagetopinfo}{}{\titlepagetopinfo}%
+      \vfill\setstretch{1.5}\@winbox%
     }
   }
 }
 \def\@winbox{%
   \parbox[b]{\titlepagewinwidth}{%
     \centering\vbox to \titlepagewinheight{%
-      %\vspace*{\fill}
-      \@authora\\
-      \@ifundefined{@authorb}{}{\@authorb\\}%
-      \@ifundefined{@authorc}{}{\@authorc\\}%
-      \@ifundefined{@authord}{}{\@authord\\}%
-      \vspace{\stretch{3}}
-      {\textbf{\MakeUppercase{\@title}}\par}
-      \vfill
+      \titlewinboxcontent%
     }%
   }%
-}
-\newcommand{\titlepageadvisorinfo}{%
-  \@ifundefined{@advisor}{}{\@advisornamethis:~\@advisor\\}
-  \@ifundefined{@coadvisor}{}{\@coadvisornamethis:~\@coadvisor\\}
 }
 
 %==============================================================================

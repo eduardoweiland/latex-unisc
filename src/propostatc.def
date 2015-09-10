@@ -20,3 +20,42 @@
 %==============================================================================
 
 \ProvidesFile{propostatc.def}[2015/07/09 v1.0 Proposta de Trabalho de Conclusao]
+
+\newcommand{\titlepagetopinfo}{%
+  \MakeUppercase{\uniscname}\\
+  \MakeUppercase{\@dept}\\
+  \MakeUppercase{\@course}\\
+}
+
+\newcommand{\titlepageadvisorinfo}{%
+  \begin{center}
+    \@ifundefined{@advisor}{}{\@advisor\\\@advisornamethis\\}
+    \@ifundefined{@coadvisor}{}{\vspace*{1cm}\@coadvisor\\\@coadvisornamethis\\}
+    \vspace*{1cm}
+    \@ifundefined{@reviewera}{}{\@reviewera\\}
+    \@ifundefined{@reviewerb}{}{\@reviewerb\\}
+    \@ifundefined{@reviewerc}{}{\@reviewerc\\}
+    \reviewersname\\\vspace*{3cm}
+  \end{center}
+}
+
+\newcommand{\titlepagedate}{%
+  \centerline{\@city, \unisc@date}
+}
+
+\newcommand{\titlewinboxcontent}{%
+  \vspace*{6cm}
+  \vspace{\stretch{3}}
+  {\textbf{\MakeUppercase{\@title}}\par}
+  \temppropname\\
+  \vspace*{1cm}
+  \byname\\
+  \vspace*{1cm}
+  \@authora\\
+  \@ifundefined{@authorb}{}{\@authorb\\}%
+  \@ifundefined{@authorc}{}{\@authorc\\}%
+  \@ifundefined{@authord}{}{\@authord\\}%
+  \vspace*{1cm}
+  \proptcspecificinfo\\
+  \vspace*{1cm}
+}
