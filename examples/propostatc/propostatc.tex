@@ -1,0 +1,97 @@
+\documentclass[propostatc,showlinks]{unisc}    % Opção showlinks exibe os links em cor azul
+
+\usepackage[T1]{fontenc}                       % Suporte a acentuação no arquivo de saída
+\usepackage[utf8]{inputenc}                    % Codificação dos arquivos de entrada em UTF-8
+\usepackage[english,brazilian]{babel}          % Idiomas utilizados no trabalho (o último é o principal)
+\usepackage{float}                             % Maior controle de objetos "float" (tabelas, figuras, etc.)
+
+\title{Exemplo de Proposta de TCC da UNISC}    % Título do Trabalho
+\author{Sobrenome}{Nome Segundo Nome}          % Autor do Trabalho
+\advisor[Prof. Msc.]{Sobrenome}{Nome}          % Orientador
+\reviewer[Prof. Msc.]{Sobrenome}{Nome}         % Avaliador 1
+\reviewer[Prof. Msc.]{Sobrenome}{Nome}         % Avaliador 2
+\reviewer[Prof. Msc.]{Sobrenome}{Nome}         % Avaliador 3
+
+\dept{Departamento de Informática}
+\course{Curso de Ciência da Computação}
+\location{Santa Cruz do Sul}{RS}
+\date{11}{setembro}{2015}
+
+
+\begin{document}
+
+\maketitle
+\tableofcontents
+
+\chapter*{Resumo}
+
+Alguns orientadores preferem colocar Introdução, outros preferem Resumo.
+
+\chapter*{Motivação}
+
+Motivação para o trabalho
+
+\chapter*{Objetivos}
+
+O objetivo geral deste trabalho é demonstrar como criar uma proposta de trabalho de conclusão de curso utilizando o modelo \LaTeX da UNISC.
+
+Os objetivos específicos são:
+
+\begin{itemize}
+  \item Promover o uso de \LaTeX na UNISC
+  \item Outros objetivos específicos
+\end{itemize}
+
+\chapter*{Metodologia}
+
+Características da pesquisa. Procedimentos metodológicos. Etapas do cronograma.
+
+\begin{enumerate}
+  \item Elaboração da proposta de TC
+  \begin{enumerate}
+    \item Definir o assunto
+    \item Pesquisar trabalhos relacionados
+    \item Escrita da proposta
+  \end{enumerate}
+  \item Outros itens...
+\end{enumerate}
+
+\chapter*{Cronograma}
+
+A tabela do cronograma pode ser montada com \LaTeX e utilizar o modelo abaixo. Ou pode ser feita como uma imagem e apenas carregar o arquivo aqui.
+
+\begin{table}[H]
+  \label{tab:cronograma}
+  \centering
+  \begin{tabular}{c|c|c|c|c|c|c|c|c|c|c|c|c|c|}
+    \cline{2-14} & \multicolumn{6}{c|}{2015} & \multicolumn{7}{c|}{2016} \\
+    \cline{2-14} & Jul & Ago & Set & Out & Nov & Dez & Jan & Fev & Mar & Abr & Mai & Jun & Jul \\
+    %                                      JUL AGO SET OUT NOV DEZ JAN FEV MAR ABR MAI JUN JUL
+    \cline{1-14} \multicolumn{1}{|c|}{1}  & X & X &   &   &   &   &   &   &   &   &   &   &   \\
+    \cline{1-14} \multicolumn{1}{|c|}{2}  &   & X &   &   &   &   &   &   &   &   &   &   &   \\
+    \cline{1-14} \multicolumn{1}{|c|}{3}  &   & X & X &   &   &   &   &   &   &   &   &   &   \\
+    \cline{1-14} \multicolumn{1}{|c|}{4}  &   &   & X & X &   &   &   &   &   &   &   &   &   \\
+    \cline{1-14} \multicolumn{1}{|c|}{5}  &   &   & X & X &   &   &   &   &   &   &   &   &   \\
+    \cline{1-14} \multicolumn{1}{|c|}{6}  &   &   & X & X & X &   &   &   &   &   &   &   &   \\
+    \cline{1-14} \multicolumn{1}{|c|}{7}  &   &   &   & X & X &   &   &   &   &   &   &   &   \\
+    \cline{1-14} \multicolumn{1}{|c|}{8}  &   &   &   & X & X & X &   &   &   &   &   &   &   \\
+    \cline{1-14} \multicolumn{1}{|c|}{9}  &   &   &   &   & X & X &   &   &   &   &   &   &   \\
+    \cline{1-14} \multicolumn{1}{|c|}{10} &   &   &   &   &   & X & X &   &   &   &   &   &   \\
+    \cline{1-14} \multicolumn{1}{|c|}{11} &   &   &   &   &   &   & X & X &   &   &   &   &   \\
+    \cline{1-14} \multicolumn{1}{|c|}{12} &   &   &   &   &   &   &   & X & X & X & X &   &   \\
+    \cline{1-14} \multicolumn{1}{|c|}{13} &   &   &   &   &   &   &   &   &   & X & X & X &   \\
+    \cline{1-14} \multicolumn{1}{|c|}{14} &   &   &   &   &   &   &   &   &   &   & X & X & X \\
+    \cline{1-14} \multicolumn{1}{|c|}{15} &   &   &   &   &   &   &   &   &   &   &   &   & X \\
+    \cline{1-14} \multicolumn{1}{|c|}{16} &   &   &   &   &   &   &   &   &   &   &   &   & X \\
+    \cline{1-14}
+  \end{tabular}
+\end{table}
+
+% Carrega as referências do arquivo referencias.bib
+\bibliographystyle{abntex2-alf}
+\bibliography{referencias}
+
+% Opcional, dependendo do orientador
+\makesignature
+
+\end{document}
