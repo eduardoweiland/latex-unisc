@@ -486,13 +486,13 @@
 \setlength{\abovecaptionskip}{4pt}
 \setlength{\belowcaptionskip}{4pt}
 
-\captionnamefont{\bfseries}
-\captiontitlefont{\bfseries}
+\captionnamefont{\bfseries\footnotesize}
+\captiontitlefont{\bfseries\footnotesize}
 \captionstyle{\centering}
 
 % Comando para citar a fonte de figuras e tabelas
 \newcommand{\fonte}[1]{%
-  \captiontitlefont{}
+  \captiontitlefont{\footnotesize}
   \legend{\sourcename: #1}
 }
 
