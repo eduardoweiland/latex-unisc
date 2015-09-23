@@ -483,9 +483,8 @@
 % apresentado, e \fonte{} depois do elemento para citar a fonte de informação.
 %==============================================================================
 \captiondelim{ -- }
-\setlength{\abovecaptionskip}{0pt}
-\setlength{\belowcaptionskip}{0pt}
-\setlength{\belowlegendskip}{0pt}
+\setlength{\abovecaptionskip}{4pt}
+\setlength{\belowcaptionskip}{4pt}
 
 \captionnamefont{\bfseries}
 \captiontitlefont{\bfseries}
