@@ -2,7 +2,7 @@
 
 Este projeto contém o modelo LaTeX para escrita de trabalhos seguindo as normas da Universidade de Santa Cruz do Sul (UNISC).
 
-O modelo está de acordo com a primeira edição atualizada das [_Normas para apresentação de trabalhos acadêmicos_][Normas UNISC], de 2013.
+O modelo segue as [normas para apresentação de trabalhos da UNISC][Normas UNISC] (AGNES; HELFER, 2013). Se encontrar algum caso onde o modelo não está de acordo com as normas, crie um [issue](https://github.com/eduardoweiland/latex-unisc/issues/new) para que esse problema seja corrigido.
 
 ## Dependências
 
@@ -45,6 +45,10 @@ Para utilizar apenas os estilos de formatação do modelo, os passos de compila�
 Se for utilizado o pacote `glossaries` (já incluído na classe) para criar a lista de abreviaturas, é necessário seguir os passos descritos no [manual do pacote][manual-glossaries].
 
 > Se estiver utilizando o [ShareLaTeX][], a compilação já irá gerar os arquivos necessários pelo `glossaries`. Porém, ao adicionar novas entradas no glossário, é necessário remover os arquivos em cache para atualizá-los. Isso é feito clicando em Logs e arquivos de saída (ao lado do botão Recompilar) e no final clicar em Limpar arquivos em cache (botão com ícone de lixeira).
+
+## Referências
+
+AGNES, C.; HELFER, I. _Normas para apresentação de trabalhos acadêmicos_. 1. ed. atual. Santa Cruz do Sul, RS: EDUNISC, 2013. ISBN 9788575782033.
 
 
 [ShareLaTeX]: https://pt.sharelatex.com "ShareLaTeX - Online LaTeX Editor"
