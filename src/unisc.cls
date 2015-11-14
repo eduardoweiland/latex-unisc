@@ -492,7 +492,7 @@
 
 % Comando para citar a fonte de figuras e tabelas
 \newcommand{\fonte}[1]{%
-  \captiontitlefont{\footnotesize}
+  \captiontitlefont{\footnotesize}%
   \legend{\sourcename: #1}
 }
 
