@@ -46,6 +46,10 @@ Se for utilizado o pacote `glossaries` (já incluído na classe) para criar a li
 
 > Se estiver utilizando o [ShareLaTeX][], a compilação já irá gerar os arquivos necessários pelo `glossaries`. Porém, ao adicionar novas entradas no glossário, é necessário remover os arquivos em cache para atualizá-los. Isso é feito clicando em Logs e arquivos de saída (ao lado do botão Recompilar) e no final clicar em Limpar arquivos em cache (botão com ícone de lixeira).
 
+## Usando citações
+
+Para citar alguma entrada das referências durante o texto, é utilizado o pacote `abntex2cite-alf`. A documentação dos comandos utilizados para criar os vários estilos de referências existentes pode ser encontrada na [documentação do pacote][abnTeX2cite].
+
 ## Referências
 
 AGNES, C.; HELFER, I. _Normas para apresentação de trabalhos acadêmicos_. 1. ed. atual. Santa Cruz do Sul, RS: EDUNISC, 2013. ISBN 9788575782033.
@@ -54,3 +58,4 @@ AGNES, C.; HELFER, I. _Normas para apresentação de trabalhos acadêmicos_. 1. 
 [ShareLaTeX]: https://pt.sharelatex.com "ShareLaTeX - Online LaTeX Editor"
 [Normas UNISC]: http://www.unisc.br/portal/pt/editora/e-books/88/normas-para-apresentacao-de-trabalhos-academicos.html "Normas para apresentação de trabalhos acadêmicos"
 [manual-glossaries]: http://mirrors.ctan.org/macros/latex/contrib/glossaries/glossaries-user.pdf "User Manual for glossaries"
+[abnTeX2cite]: http://repositorios.cpai.unb.br/ctan/macros/latex/contrib/abntex2/doc/abntex2cite-alf.pdf
