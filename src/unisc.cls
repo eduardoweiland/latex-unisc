@@ -184,6 +184,7 @@
 
 \newcommand{\dept}[1]{\gdef\@dept{#1}}
 \newcommand{\course}[1]{\gdef\@course{#1}}
+\newcommand{\degree}[1]{\gdef\@degree{#1}}
 
 %==============================================================================
 % Definição das capas
@@ -294,7 +295,7 @@
 }
 
 %==============================================================================
-% Definição da pagina de assinaturas.
+% Definição da página de assinaturas.
 %==============================================================================
 \newcommand{\makesignature}{%
   \clearpage

@@ -28,19 +28,19 @@
   \def\abstractname{Resumo}%
   \def\appendixname{Ap{\^e}ndice}%
   \def\contentsname{Sum{\'a}rio}%
-  \def\listfigurename{Lista de Ilustra\c{c}\~{o}es}%
+  \def\listfigurename{Lista de Ilustra\c{c}{\~o}es}%
   \def\listtablename{Lista de Tabelas}%
-  \def\listdefname{Lista de Defini\c{c}\~{o}es}%
+  \def\listdefname{Lista de Defini\c{c}{\~o}es}%
   \def\listtheoremsname{Lista de Teoremas}%
   \def\sourcename{Fonte}%
-  \def\corollaryname{Corol\'{a}rio}%
-  \def\propositionname{Proposi\c{c}\~{a}o}%
-  \def\definitionname{Defini\c{c}\~{a}o}%
+  \def\corollaryname{Corol{\'a}rio}%
+  \def\propositionname{Proposi\c{c}{\~a}o}%
+  \def\definitionname{Defini\c{c}{\~a}o}%
   \def\conjecturename{Conjectura}%
   \def\examplename{Exemplo}%
-  \def\exercisename{Exerc\'{\i}cio}%
+  \def\exercisename{Exerc{\'i}cio}%
   \def\propertyname{Propriedade}%
-  \def\remarknamek{Observa\c{c}\~{a}o}%
+  \def\remarknamek{Observa\c{c}{\~a}o}%
   \def\lemmaname{Lema}%
   \def\theoremname{Teorema}%
   \def\proofname{Prova}%
@@ -54,41 +54,17 @@
   \def\coadvisorname{Co-orientador}%
   \def\coadvisornamef{Co-orientadora}%
   \def\listabbrvname{Lista de Abreviaturas}%
-  \def\listsymbolname{Lista de S{\'\i}mbolos}%
+  \def\listsymbolname{Lista de S{\'i}mbolos}%
   \def\annexname{Anexo}%
   \def\keywordsname{Palavras-chave}%
   \def\byname{por}%
-  \def\dissname{Disserta{\c{c}}{\~a}o (mestrado)}%
-  \def\dissspecificinfo{%
-    Disserta{\c{c}}{\~a}o apresentada como requisito parcial\\
-    para a obten{\c{c}}{\~a}o do grau de\\
-    Mestre em Ci{\^e}ncia da Computa{\c{c}}{\~a}o
-  }%
-  \def\tesename{Tese (doutorado)}%
-  \def\tesespecificinfo{%
-    Tese apresentada como requisito parcial\\
-    para a obten{\c{c}}{\~a}o do grau de\\
-    Doutor em Ci{\^e}ncia da Computa{\c{c}}{\~a}o
-  }%
-  \def\planodoutoradospecificinfo{Plano de Curso para Doutorado}%
-  \def\proptesespecificinfo{Proposta de Tese de Doutorado}%
+  \def\temppropname{(T{\'i}tulo Provis{\'o}rio)}
   \def\proptcspecificinfo{Proposta para Trabalho de Conclus{\~a}o}%
   \def\tcname{Trabalho de Conclus{\~a}o}%
   \def\tcspecificinfo{%
-    Trabalho de Conclus{\~a}o apresentado ao Curso de Ci{\^e}ncia da
-    Computa{\c{c}}{\~a}o da Universidade de Santa Cruz do Sul,
-    como requisito parcial para a obten{\c{c}}{\~a}o do t{\'i}tulo de
-    Bacharel em Ci{\^e}ncia da Computa{\c{c}}{\~a}o{.}
+    Trabalho de Conclus{\~a}o apresentado ao \@course~da \uniscname, como
+    requisito parcial para a obten\c{c}{\~a}o do t{\'i}tulo de \@degree.
   }%
-  \def\temppropname{(T{\'i}tulo Provis{\'o}rio)}
-  \def\rpname{Relat{\'o}rio de Pesquisa}%
-  \def\financname{{\'O}rg{\~a}os Financiadores}%
-  \def\especname{Monografia (especializaç{\~a}o)}%
-  \def\especspecificinfo{%
-    Monografia de Conclus{\~a}o de Curso apresentada como
-    requisito parcial para a obtenção do grau de Especialista
-  }%
-  \def\coordname{Coordenador do Curso}%
 }
 \@namedef{datebrazilian}{%
   \def\monthname{%
