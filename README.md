@@ -1,4 +1,4 @@
-# Modelo LaTeX UNISC
+# Modelo LaTeX UNISC [![Versão v1.1](https://img.shields.io/badge/Vers%C3%A3o-v1.1-brightgreen.svg)](CHANGELOG.md)
 
 Este projeto contém o modelo LaTeX para escrita de trabalhos seguindo as normas da Universidade de Santa Cruz do Sul (UNISC).
 
