@@ -72,6 +72,7 @@
 \RequirePackage{ccaption}          % Formato de legendas de figuras e tabelas
 \RequirePackage{times}             % Fonte "Adobe Times" (semelhante a Times New Roman)
 \RequirePackage{mathptmx}          % Usa a fonte "Adobe Times" nas fórmulas
+\RequirePackage{listings}          % Listagens de códigos-fonte
 \RequirePackage[acronym,nonumberlist]{glossaries} % Lista de abreviaturas e símbolos
 
 \RequirePackage{titlesec}          % Formatação de títulos de capítulos e seções
@@ -327,8 +328,9 @@
 
 \settocfeature[toc]{entryvskip}{-4pt}
 \settocfeature[toc]{entryhook}{\bfseries}
-\settocfeature[lof][1]{entryhook}{\figurename\hspace{1.2em}}
-\settocfeature[lot][1]{entryhook}{\tablename\hspace{1.2em}}
+\settocfeature[lof][1]{entryhook}{\figurename~\hskip\leftskip}
+\settocfeature[lot][1]{entryhook}{\tablename~\hskip\leftskip}
+\settocfeature[lol][1]{entryhook}{\lstlistingname~\hskip\leftskip}
 
 \newif\if@aftertoc
 \@aftertocfalse
@@ -338,7 +340,7 @@
 }
 
 %==============================================================================
-% Definição das listas de abreviaturas e siglas e de símbolos
+% Definição dos formatos de listas (abreviaturas, símbolos, códigos)
 %==============================================================================
 
 \glsnogroupskiptrue
@@ -350,7 +352,21 @@
 \renewcommand*{\glspostdescription}{}
 
 % Título da lista de abreviaturas
-\AtBeginDocument{\renewcommand{\acronymname}{\listabbrvname}}
+\renewcommand{\acronymname}{\listabbrvname}
+
+% Rótulo do código usado no comando \autoref{}
+\renewcommand{\lstlistingname}{\listingname}
+
+% Título da lista de códigos
+\renewcommand{\lstlistlistingname}{\listlistingsname}
+
+% Configurações padrão para todos os códigos
+\lstset{
+  numberbychapter=false,
+  frame=single,
+  basicstyle=\ttfamily\small,
+  lineskip=-1pt    % Reset do espaçamento 1.5 do texto
+}
 
 %==============================================================================
 % Redefinição do ambiente para resumo (abstract)

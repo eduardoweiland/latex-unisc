@@ -32,6 +32,7 @@
   \def\listtablename{Lista de Tabelas}%
   \def\listdefname{Lista de Defini\c{c}{\~o}es}%
   \def\listtheoremsname{Lista de Teoremas}%
+  \def\listlistingsname{Lista de C{\'o}digos}%
   \def\sourcename{Fonte}%
   \def\corollaryname{Corol{\'a}rio}%
   \def\propositionname{Proposi\c{c}{\~a}o}%
@@ -46,6 +47,7 @@
   \def\proofname{Prova}%
   \def\figurename{Figura}%
   \def\tablename{Tabela}%
+  \def\listingname{C{\'o}digo}%
   \def\reviewername{Avaliador}%
   \def\reviewersname{Avaliadores}%
   \def\reviewernamef{Avaliadora}%
