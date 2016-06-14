@@ -4,6 +4,10 @@ Este projeto contém o modelo LaTeX para escrita de trabalhos seguindo as normas
 
 O modelo segue as [normas para apresentação de trabalhos da UNISC][Normas UNISC] (AGNES; HELFER, 2013). Se encontrar algum caso onde o modelo não está de acordo com as normas, crie um [issue](https://github.com/eduardoweiland/latex-unisc/issues/new) para que esse problema seja corrigido.
 
+## Utilização do modelo
+
+A documentação para utilizar esse modelo ainda está sendo escrita e está bem incompleta. O que já existe hoje está disponível na [Wiki](https://github.com/eduardoweiland/latex-unisc/wiki). Em caso de dúvidas específicas sobre a utilização do modelo, crie um [issue](https://github.com/eduardoweiland/latex-unisc/issues/new) descrevendo a dúvida e, assim que possível, essas dúvidas serão resolvidas e documentadas.
+
 ## Dependências
 
 Os seguintes pacotes LaTeX são necessários para utilizar esse modelo:
