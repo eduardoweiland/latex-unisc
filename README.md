@@ -12,6 +12,8 @@ O modelo segue as [normas para apresentação de trabalhos da UNISC][Normas UNIS
 
 A documentação para utilizar esse modelo ainda está sendo escrita e está bem incompleta. O que já existe hoje está disponível na [Wiki](https://github.com/eduardoweiland/latex-unisc/wiki). Em caso de dúvidas específicas sobre a utilização do modelo, crie um [issue](https://github.com/eduardoweiland/latex-unisc/issues/new) descrevendo a dúvida e, assim que possível, essas dúvidas serão resolvidas e documentadas.
 
+Para obter ajuda, também existe uma lista de e-mails para discussão do LaTeX UNISC, que pode ser utilizada para resolver dúvidas específicas sobre o modelo ou sobre escrita de documentos com LaTeX em geral. A lista também é utilizada para informar de atualizações realizadas no modelo. Para participar da lista de discussão, cadastre-se na página <http://www.freelists.org/list/latex-unisc>.
+
 ## Dependências
 
 Os seguintes pacotes LaTeX são necessários para utilizar esse modelo:
