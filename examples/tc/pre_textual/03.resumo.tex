@@ -1,0 +1,8 @@
+% Resumo em língua vernácula é um elemento obrigatório.
+% Deve ser utilizado o ambiente abstract e o comando \keywords deve ficar no começo:
+
+\begin{abstract}
+  \keywords{MySQL, recomendação de índices, modelo físico}
+  
+  Ferramentas para recomendação de índices são utilizadas para auxiliar na definição dos índices que devem ser criados em um banco de dados relacional, visando obter um melhor desempenho para execução de consultas. Vários bancos de dados já oferecem ferramentas com esse objetivo, como Microsoft SQL Server, Oracle Database, IBM DB2 e PostgreSQL. O presente trabalho apresenta o desenvolvimento de um ambiente para recomendação de índices para bancos de dados MySQL. O ambiente analisa uma carga de trabalho composta de diversas consultas SQL. Essa carga de trabalho é carregada para a ferramenta a partir de um arquivo XML em um formato pré-definido. Cada consulta é interpretada e um conjunto de índices candidatos será gerado. Os índices são, então, criados em um banco de dados configurado pelo usuário do ambiente, que já deve conter todas as tabelas e dados necessários. Os índices candidatos são avaliados através de instruções EXPLAIN, calculando o custo de todas as consultas utilizando cada índice possível. A saída ao final da execução da ferramenta é o conjunto de índices recomendados que oferece o menor custo total para a carga de trabalho.
+\end{abstract}

@@ -1,0 +1,38 @@
+\chapter{Conclusão}
+\label{conclusao}
+
+A otimização da performance de bancos de dados é de vital importância para a vasta maioria dos sistemas existentes no mercado que utilizado o modelo de dados relacional. Dado o rápido crescimento da quantidade de dados a ser armazenada por estes sistemas, o desempenho destes deve ser aprimorado continuamente.
+
+Para atingir o objetivo proposto neste trabalho, foi desenvolvida uma ferramenta capaz de recomendar opções de índices para serem utilizados em um banco de dados analisado, visando reduzir o custo de processamento das consultas no servidor.
+
+Na tabela \ref{tab:trabalhos-relacionados}, apresentada no capítulo \ref{trabalhos-relacionados}, foram listados alguns dos trabalhos já desenvolvidos por outros autores da área e foi realizada uma comparação entre as contribuições dos mesmos. Retornando-se a esta tabela, pode-se agora incluir as características da aplicação desenvolvida (tabela \ref{tab:contribuicao-trabalho}).
+
+\begin{table}[H]
+  \centering
+  \caption{Contribuição do trabalho desenvolvido}
+  \begin{tabular}{|p{2.1cm}|l|p{3.4cm}|p{2.1cm}|p{4.1cm}|} \hline
+    \textbf{Trabalho}
+        & \textbf{SGBD}
+        & \textbf{Objetivo}
+        & \textbf{Abordagem}
+        & \textbf{Avaliação de custo}
+        \\ \hline
+
+    Weiland e Kroth, 2016
+        & MySQL
+        & Sugestão de índices
+        & \emph{Offline}
+        & Consultas ao otimizador do \gls{sgbd} utilizando índices materializados
+        \\ \hline
+  \end{tabular}
+  \label{tab:contribuicao-trabalho}
+  \fonte{Elaborado pelo autor.}
+\end{table}
+
+Os resultados obtidos com a ferramenta desenvolvida neste trabalho foram satisfatórios. Porém, pode-se observar ainda que existem vários ajustes que poderiam ser desenvolvidos na busca de melhores resultados. Em comparação aos trabalhos relacionados, o MIST ainda não possui algumas funcionalidades que seriam muito úteis, porém que não foram implementadas devido ao escopo e tempo limitado do trabalho.
+
+A primeira melhoria detectada refere-se à entradas dos dados na ferramenta. A solução desenvolvida, utilizando arquivos \gls{xml}, ainda exige um processamento manual dos dados para formatá-los de acordo com o esperado pela ferramenta. Idealmente, o MIST poderia conectar-se diretamente a um banco de dados configurado para obter todas as informações essenciais sobre as tabelas e estatísticas sobre os dados, sem a necessidade de intervenção manual.
+
+Também referente à entrada de dados, o MIST poderia ser integrado com o \emph{parser} do MySQL de modo a interpretar as consultas a serem analisadas sem exigir uma conversão manual destas para um arquivo \gls{xml}. Além disso, esta integração possibilitaria que o MIST avaliasse consultas mais complexas, incluindo união e sub-consultas. Adicionar suporte para avaliar instruções de atualização de dados, como INSERTs e UPDATEs, também seria uma funcionalidade importante para a ferramenta.
+
+Outras melhorias identificadas são relacionadas à otimização do programa, que pode ser obtida de duas formas: 1) utilização de melhores heurísticas para a geração de índices candidatos, de forma a gerar uma quantidade menor de índices para serem verificados no banco de dados; ou 2) implementação do suporte a simulação de índices no MySQL, removendo a necessidade da criação dos índices materializados e utilizando apenas as estatísticas calculadas sobre os dados.

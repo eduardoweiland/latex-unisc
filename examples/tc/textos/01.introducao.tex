@@ -1,0 +1,33 @@
+\chapter{Introdução}
+\label{introducao}
+
+É essencial para quase todos os \emph{softwares} ter um bom desempenho, seja por necessidade dos clientes ou para oferecer uma melhor experiência para os usuários, esse é um fator cada vez mais importante em muitas aplicações, e diretamente relacionado à forma em que os dados são armazenados e acessados. Atualmente, os \glspl{sgbd} relacionais são um dos meios de armazenamento mais utilizados no desenvolvimento de novas aplicações \cite{Heuser:2009}.
+
+A melhoria do desempenho de bancos de dados relacionais consiste em identificar quais são os principais problemas de performance e tentar resolvê-los \cite{Thalheim:2011}. Os problemas mais comuns podem ser configurações de \emph{hardware} do servidor inadequadas, consultas escritas de forma não otimizada, ou a organização física dos dados em disco não corresponder às necessidades da aplicação.
+
+A modelagem física de um banco de dados é o processo que define a organização física dos dados em disco, e compreende a definição de índices, particionamento, agrupamento (\emph{clustering}) e materialização de dados \cite[p. 7]{Lightstone:2007}. A otimização manual dessa modelagem é uma tarefa complexa e que exige muito conhecimento técnico por parte do administrador do banco de dados -- \gls{dba}. Com isso, a necessidade de ferramentas que automatizem esse processo é cada vez mais importante \cite{Alagiannis:2010}.
+
+A otimização do modelo físico é vista pelos autores da área como a estratégia mais eficiente para melhorar o desempenho dos \glspl{sgbd} \cite{Thalheim:2011,Zilio:2004}. Segundo \citet{Petraki:2015}, dentre as possíveis melhorias no esquema físico de um banco de dados, a escolha de índices adequados ainda é a que apresenta os melhores resultados. Algumas das técnicas empregadas para otimização de índices mais conhecidas e aplicadas são \emph{offline}, \emph{online} e adaptativa.
+
+A indexação \emph{offline} foi a primeira estratégia adotada pelos \glspl{sgbd} comerciais. Consiste em uma ferramenta que auxilia o trabalho do \gls{dba}, analisando uma determinada carga de trabalho (\emph{workload}) e sugerindo melhorias. Porém, essa técnica requer o conhecimento prévio da carga de trabalho a qual o servidor deve estar preparado, o que nem sempre é possível, visto a dinamicidade das aplicações modernas.
+
+Por sua vez, a indexação \emph{online} surgiu como uma alternativa para resolver o maior problema da indexação \emph{offline}, sugerindo uma abordagem em que a carga de trabalho do servidor é monitorada continuamente. Conforme a carga de trabalho sofre alterações, novos índices podem ser criados e índices já existentes podem ser atualizados ou excluídos conforme a necessidade. No entanto, tais operações requerem um longo tempo para completar e consomem mais recursos de processamento, tornando-se inviáveis para bancos com um maior volume de dados.
+
+A estratégia de indexação adaptativa aparece como uma opção mais econômica no uso de recursos, enquanto ainda resolve o problema de não ter um conhecimento prévio da carga de trabalho. Essa técnica consiste em realizar pequenas atualizações de forma incremental nos durante a execução de cada consulta. Dessa forma, os índices se mantém sempre atualizados e instantaneamente preparados para a carga de trabalho à qual o servidor é submetido.
+
+Os trabalhos desenvolvidos mais recentemente sugerem, geralmente, uma abordagem \emph{online} ou adaptativa, ou ainda uma nova aproximação, como a abordagem holística proposta por \citet{Petraki:2015}. Poucos trabalhos continuam explorando a técnica de indexação \emph{offline}. No entanto, em aplicações onde a carga de trabalho do banco de dados é razoavelmente constante e previsível, as técnicas de otimização \emph{online} e adaptativa são desnecessárias.
+
+Nessas condições, os sistemas obteriam maiores benefícios tendo um modelo físico definitivo adaptado e otimizado à maioria das condições de operação normal da aplicação. Isso auxiliaria na redução de custos de manutenção do banco de dados ao longo do tempo, além de evitar estressar o sistema continuamente com as verificações de performance do modelo físico realizadas pelas técnicas de otimização mencionadas acima. Dessa forma, uma abordagem \emph{offline} ainda pode ser aplicada em casos específicos.
+
+O objetivo geral desse trabalho é desenvolver um ambiente de código aberto para recomendação de índices para bancos de dados MySQL, visando obter um conjunto de índices equilibrado que oferece um bom desempenho geral para um determinado conjunto de consultas.
+
+Os objetivos específicos do presente trabalho são:
+
+\begin{itemize}
+  \item Verificar quais as principais características que influenciam a performance dos bancos de dados relacionais em geral;
+  \item Definir um modelo de avaliação de performance do \gls{sgbd} para comparar os resultados obtidos com a solução desenvolvida e as ferramentas já existentes no mercado;
+  \item Elaborar a ferramenta de forma que possibilite o desenvolvimento futuro de integração com diferentes \glspl{sgbd};
+  \item Validar a solução desenvolvida em um ambiente de uso real.
+\end{itemize}
+
+O trabalho é estruturado da seguinte forma: no capítulo \ref{arquitetura-bd} são descritos os principais componentes que formam a arquitetura geral de um banco de dados relacional; o capítulo \ref{estrategias-otimizacao} introduz alguns aspectos importantes relacionados à otimização de um banco de dados; o capítulo \ref{trabalhos-relacionados} apresenta alguns trabalhos relacionados e realiza uma comparação entre esses e o presente trabalho; já no capítulo \ref{solucao-desenvolvida} é apresentada a solução que foi desenvolvida. O trabalho encerra apresentando os resultados e conclusões obtidos e as referências utilizadas.

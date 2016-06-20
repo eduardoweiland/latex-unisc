@@ -1,0 +1,14 @@
+% Resumo em língua estrangeira é um elemento obrigatório:
+% Deve ser utilizado o ambiente abstract com duas opções:
+%   - Idioma a ser utilizado (no exemplo abaixo, english)
+%   - Título do capítulo (deve ser a tradução de "Resumo" para o idioma utilizado)
+%
+% O comando \keywords também deve ser utilizado com uma opção extra:
+%   - Rótulo para as palavras-chave (deve ser a tradução de "Palavras-chave" no idioma utilizado)
+%
+
+\begin{abstract}[english][Abstract]
+  \keywords[Keywords]{MySQL, index advisor, physical model}
+
+  Index advisor tools are used to assist in the definition of indexes that should be created in a relational database in order to obtain better performance for running queries. Several databases already offer tools for this purpose, such as Microsoft SQL Server, Oracle Database, IBM DB2 and PostgreSQL. This paper proposes the development of an index advisor environment for MySQL databases. The environment analyzes a workload consisting of several SQL queries. This workload is loaded into the tool from an XML file in a predefined format. Each query is interpreted and a set of candidate indexes is generated. The indexes are then created in a database configured by the user, which should already contain all the tables and data required. Candidate indexes are evaluated by EXPLAIN statements, calculating the cost of all queries using every possible index. The output at the of the execution is a  set of recommended indexes that offers the lowest total cost to the workload.
+\end{abstract}

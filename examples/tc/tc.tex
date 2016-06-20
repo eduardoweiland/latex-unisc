@@ -1,0 +1,71 @@
+\documentclass[tc]{unisc}
+
+\usepackage[T1]{fontenc}        % Suporte a acentuação no arquivo de saída
+\usepackage[utf8]{inputenc}     % Codificação dos arquivos de entrada em UTF-8
+\usepackage[english,brazilian]{babel}
+
+\usepackage{graphicx}           % Para adicionar figuras
+\usepackage{float}              % Maior controle de objetos "float" (tabelas, figuras, etc.)
+
+\usepackage{capt-of}
+\usepackage{longtable}
+\usepackage{tabularx}
+
+\graphicspath{ {images/} }
+
+
+% ==================================================================================
+%
+%                         INFORMAÇÕES GERAIS
+%
+% ==================================================================================
+
+\title{Ambiente de recomendação de índices para bancos de dados MySQL}
+
+\author{Weiland}{Eduardo}
+\advisor[Prof. Msc.]{Kroth}{Eduardo}
+\reviewer[Prof. Msc.]{Molz}{Kurt Werner}
+\reviewer[Prof. Msc.]{Franzen}{Evandro}
+
+\dept{Departamento de Computação}
+\course{Curso de Ciência da Computação}
+\degree{Bacharel em Ciência da Computação}
+\location{Santa Cruz do Sul}{RS}
+\date{23}{junho}{2016}
+
+\makeindex
+
+% ==================================================================================
+%
+%                         CONTEÚDO
+%
+% ==================================================================================
+
+
+\begin{document}
+
+\makecapa
+\maketitle
+
+\input{pre_textual/01.dedicatoria.tex}
+\input{pre_textual/02.agradecimentos.tex}
+\input{pre_textual/03.resumo.tex}
+\input{pre_textual/04.abstract.tex}
+\listoffigures
+\listoftables
+\lstlistoflistings
+\input{pre_textual/05.abreviaturas.tex}
+\tableofcontents
+
+\input{textos/01.introducao.tex}
+\input{textos/02.arquitetura_bd.tex}
+\input{textos/03.estrategias_otimizacao.tex}
+\input{textos/04.trabalhos_relacionados.tex}
+\input{textos/05.00.solucao_desenvolvida.tex}
+\input{textos/06.conclusao.tex}
+
+\bibliography{referencias}
+
+% Anexos
+
+\end{document}

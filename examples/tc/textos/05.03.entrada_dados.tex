@@ -1,0 +1,133 @@
+\section{Entrada de dados}
+\label{entrada-de-dados}
+
+Os dados que são utilizados como entrada para a ferramenta desenvolvida são a estrutura das tabelas, juntamente com algumas estatísticas sobre os dados, e um conjunto de consultas que são executadas por alguma aplicação sobre essas tabelas, igualmente acompanhadas de algumas estatísticas disponíveis.
+
+Para que essas informações sejam apresentadas à ferramenta, foram desenvolvidos dois formatos de arquivos baseados no padrão \gls{xml}. O primeiro deles é o MSDF (\textit{MIST Schema Definition File}, Arquivo de Definição do Modelo do Banco de Dados do MIST), utilizado para descrever a estrutura das tabelas e índices existentes no banco de dados. O outro formato de arquivo é o MQLF (\textit{MIST Query Log File}, Arquivo de Histórico de Consultas do MIST), que descreve um conjunto de consultas para ser analisado.
+
+\subsection{O formato do Arquivo de Definição do Modelo do Banco de Dados (MSDF)}
+\label{formato-msdf}
+
+O formato de arquivo MSDF possui uma estrutura como a apresentada no Código \ref{exemplo-formato-msdf}. O elemento raiz da estrutura possui o nome \texttt{schema} e um atributo \texttt{version} que identifica a versão do formato do arquivo. A versão desenvolvida neste trabalho é a \texttt{1.0}, e futuras modificações no formato do arquivo devem incrementar esse valor, de forma que o \textit{software} possa manter compatibilidade com diferentes versões do arquivo.
+
+\begin{lstlisting}[label=exemplo-formato-msdf, caption={Exemplo de arquivo no formato MSDF.}]
+<?xml version="1.0" encoding="utf-8" ?>
+<schema version="1.0">
+    <table name="nome_da_tabela" row-count="50000">
+        <column name="id"
+                type="integer"
+                nullable="false"
+                distinct-values="50000"
+                null-values="0"/>
+
+        <column name="coluna_int"
+                type="integer"
+                nullable="true"
+                distinct-values="25"
+                null-values="3584"/>
+
+        <column name="coluna_texto"
+                type="text"
+                length="60"
+                nullable="true"
+                distinct-values="32054"
+                null-values="264"/>
+
+        <primary-key>
+            <column name="id"/>
+        </primary-key>
+        <foreign-key table="outra_tabela">
+            <column name="coluna_int" referenced="id"/>
+        </foreign-key>
+    </table>
+</schema>
+\end{lstlisting}
+
+Os elementos filhos do \texttt{schema} possuem o nome \texttt{table}, representando a estrutura de uma tabela existente do banco de dados. Os atributos deste elemento são \texttt{name}, cujo valor deve ser o nome da tabela, e \texttt{row-count}, que deve informar a quantidade total de registros existentes na tabela. Este e outros valores são utilizados no cálculo de algumas estatísticas sobre os dados no momento da geração de índices candidatos.
+
+Cada coluna de uma tabela é representada no arquivo através de uma \textit{tag} \texttt{column} vazia (contendo apenas atributos) dentro da respectiva \textit{tag} \texttt{table}. O atributo \texttt{name} representa o nome da coluna; o atributo \texttt{type} indica qual é o tipo de dados armazenado na coluna, e deve ser um dos seguintes valores suportados: \texttt{varchar}, \texttt{char}, \texttt{text}, \texttt{tinyint}, \texttt{smallint}, \texttt{integer}, \texttt{mediumint}, \texttt{bigint}, \texttt{boolean}, \texttt{decimal}, \texttt{date}, \texttt{time}, \texttt{datetime}, \texttt{float}, \texttt{double} e \texttt{blob}. O atributo \texttt{nullable} deve conter um valor lógico \texttt{true} ou \texttt{false} indicando se a coluna aceita valores \texttt{NULL} ou não. O atributo \texttt{distinct-values} deve apresentar a quantidade de valores diferentes existentes nessa coluna entre todos os registros da tabela, desconsiderando os valores \texttt{NULL}. Estes devem ser contabilizados no atributo \texttt{null-values}, informando quantos registros possuem o valor \texttt{NULL} para essa coluna. Por fim, os atributos opcionais \texttt{length} e \texttt{precision} são utilizados apenas quando o tipo da coluna requerer essas informações.
+
+Logo após a definição das colunas da tabela devem ser incluídas as definições de chave primária e chaves estrangeiras, quando estas existirem na tabela. Para a chave primária utiliza-se o elemento \texttt{primary-key}, sendo que cada coluna presente na chave primária é indicada através da inclusão de um elemento filho com a \textit{tag} \texttt{column} contendo o atributo \texttt{name}. As chaves estrangeiras são definidas pela inclusão de elementos \texttt{foreign-key}, sendo um para cada chave estrangeira presente na tabela. A \textit{tag} \texttt{foreign-key} possui o atributo \texttt{table} que deve indicar o nome da tabela referenciada. As colunas da chave são indicadas por elementos \texttt{column} filhos, contendo os atributos \texttt{name}, com o nome da coluna na tabela atual, e \texttt{referenced}, com o nome da coluna na tabela referenciada.
+
+\subsection{O formato do Arquivo de Histórico de Consultas (MQLF)}
+\label{formato-mqlf}
+
+O arquivo de histórico de consultas (MQLF) apresenta um formato semelhante ao de definição do modelo do banco de dados (MSDF), conforme exemplificado no Código \ref{exemplo-formato-mqlf}. O elemento raiz da estrutura do XML é \texttt{queries}, que possui o atributo \texttt{version} com valor \texttt{1.0}.
+
+\begin{lstlisting}[label=exemplo-formato-mqlf, caption={Exemplo de arquivo no formato MQLF.}]
+<?xml version="1.0" encoding="utf-8" ?>
+<queries version="1.0">
+    <query id="1" count="42">
+        <sql>
+            SELECT
+                t.id,
+                t.coluna_texto,
+                ot.coluna_int,
+                ot.data_compra,
+                ot.status,
+                SUM(ot.valor)
+            FROM
+                nome_da_tabela t
+            INNER JOIN
+                outra_tabela ot
+                    ON ot.coluna_int = t.id
+            WHERE
+                ot.data_compra BETWEEN '2016-01-01' AND '2016-01-31'
+                AND ot.status IN ('p', 'a', 'c')
+                AND t.coluna_texto LIKE '%pesquisa%'
+            GROUP BY
+                t.id
+            ORDER BY
+                t.coluna_texto ASC,
+                ot.data_compra DESC
+        </sql>
+        <from>
+            <table>nome_da_tabela</table>
+        </from>
+        <joins>
+            <join type="inner" table="outra_tabela">
+                <condition field="coluna_int"
+                           type="match"/>
+            </join>
+        </joins>
+        <where>
+            <condition table="outra_tabela"
+                       field="data_compra"
+                       type="range"/>
+
+            <condition table="outra_tabela"
+                       field="status"
+                       type="list"/>
+
+            <condition table="nome_da_tabela"
+                       field="coluna_texto"
+                       type="like"/>
+        </where>
+        <groupby>
+            <field table="nome_da_tabela"
+                   field="id"/>
+        </groupby>
+        <orderby>
+            <field table="nome_da_tabela"
+                   field="coluna_texto"
+                   dir="asc"/>
+
+            <field table="outra_tabela"
+                   field="data_compra"
+                   dir="desc"/>
+        </orderby>
+    </query>
+</queries>
+\end{lstlisting}
+
+Os elementos filhos do nodo raiz são identificados pela \textit{tag} \texttt{query}, cada um representando uma consulta distinta executada pelo sistema analisado. Uma consulta é considerada distinta, no contexto deste trabalho, quando não houver outra consulta que apresente, simultaneamente, as mesmas tabelas na cláusula FROM, as mesmas tabelas e condições de junção nas cláusulas JOIN, os mesmos operadores de comparação para os mesmos campos na cláusula WHERE, e os mesmos campos para agrupamento e para ordenação.
+
+O elemento \texttt{query} apresenta ainda os atributos \texttt{id}, que deve ser um número inteiro para identificar exclusivamente cada consulta dentro do mesmo arquivo, e \texttt{count}, que deve ser um número inteiro positivo indicando o número de vezes que essa determinada consulta foi executada dentro de um período observado. O valor deste atributo não necessariamente deve ser exato, mas para obter os melhores resultados a proporção de distribuição do número de execução entre todas as consultas analisadas deve ser mantida próxima ao real.
+
+Os nodos filhos de \texttt{query} são utilizados para descrever a consulta. O primeiro é o \texttt{sql}, que deve conter o texto da consulta original, com todos os valores dos parâmetros necessários para a sua execução no banco de dados. O elemento \texttt{from} deve conter um ou mais elementos \texttt{table} com o nome das tabelas encontradas na cláusula FROM da consulta.
+
+Caso a consulta realize JOINs com uma ou mais tabelas, deve ser incluído o elemento \texttt{joins} para descrevê-los. Este elemento possui nodos filhos com a \textit{tag} \texttt{join}, com um atributo \texttt{type} indicando o tipo de junção realizada (\texttt{inner}, \texttt{left} ou \texttt{right}) e o atributo \texttt{table} com o nome da tabela com a qual é realizado o JOIN. Os nodos filhos desse elemento refletem as condições para a junção, representadas com a \textit{tag} \texttt{condition} e os atributos \texttt{field} com o nome do campo e \texttt{type} com o tipo de comparação utilizado: \texttt{const}, \texttt{match}, \texttt{range}, \texttt{list} ou \texttt{like}.
+
+A \textit{tag} \texttt{where} lista todas as condições de filtro utilizadas no WHERE da consulta SQL. Consiste em vários elementos \texttt{condition} com os atributos \texttt{table} e \texttt{field} identificando, respectivamente, o nome da tabela e o nome do campo que é utilizado na condição, e o atributo \texttt{type} com o tipo do operador de comparação utilizado: \texttt{const}, \texttt{match}, \texttt{range}, \texttt{list} ou \texttt{like}.
+
+Os últimos elementos necessários para descrever a consulta são o \texttt{groupby} e \texttt{orderby}, utilizados apenas no caso de a consulta incluir estes operadores. A \textit{tag} \texttt{groupby} lista os campos utilizados para agrupamento na consulta, utilizando elementos \texttt{field} com os atributos \texttt{table} e \texttt{field} identificando, respectivamente, o nome da tabela e o nome do campo. O elementos \texttt{orderby} lista as regras de ordenação utilizadas na consulta, utilizando \textit{tags} \texttt{field} com os atributos \texttt{table} e \texttt{field} identificando a tabela e coluna ordenada e o atributo \texttt{dir} indicando a direção da ordenação (\texttt{asc} ou \texttt{desc}).
