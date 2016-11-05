@@ -409,45 +409,65 @@
 % formatação dos títulos propriamente ditos.
 %==============================================================================
 \newcommand{\unisc@chapterfont}{\@setfontsize\Large{12}{20}}
+
 \def\@chapapp{}
+\def\@appendixname{}
+
+\newif\if@appendixchapter\@appendixchapterfalse
+
+% Implementação do comando \chapter{Título} para capítulos numerados
 \def\@chapter[#1]#2{%
   \par
-  \refstepcounter{chapter}%
-  \addcontentsline{toc}{chapter}{\protect\numberline{\@chapapp\thechapter}\uppercase{#1}}%
+  \if@appendixchapter%
+    \refstepcounter{ii@appendix}%
+    \addcontentsline{toc}{chapter}{\MakeUppercase{\@appendixname}~\thechapter~--~\MakeUppercase{#1}}%
+  \else%
+    \refstepcounter{chapter}%
+    \addcontentsline{toc}{chapter}{\protect\numberline{\thechapter}\MakeUppercase{#1}}%
+  \fi%
   \addtocontents{lof}{\protect}%
   \addtocontents{lot}{\protect}%
   \pagestyle{unisc}\let\ps@plain\ps@unisc%
   \@makechapterhead{#2}\@afterheading
 }
 
+% Formatação do capítulo \chapter para exibição na página onde foi definido
 \def\@makechapterhead#1{%
-  \reset@font{\unisc@chapterfont\noindent\textbf{\@chapapp\thechapter~\MakeUppercase{#1}}}
+  \if@appendixchapter%
+    \reset@font\centerline{\unisc@chapterfont\noindent\textbf{\MakeUppercase{\@appendixname}~\thechapter~--~\MakeUppercase{#1}}}%
+  \else%
+    \reset@font{\unisc@chapterfont\noindent\textbf{\thechapter~\MakeUppercase{#1}}}%
+  \fi%
   \vspace{12pt}
 }
+
+
+% Implementação do comando \chapter*{Título} para capítulos não numerados
 \def\@schapter#1{%
   \if@aftertoc%
-    \addcontentsline{toc}{chapter}{\uppercase{#1}}%
+    \addcontentsline{toc}{chapter}{\MakeUppercase{#1}}%
     \pagestyle{unisc}\let\ps@plain\ps@unisc%
   \fi%
   \addtocontents{lof}{\protect\addvspace{10\p@}}%
   \addtocontents{lot}{\protect\addvspace{10\p@}}%
   \@makeschapterhead{#1}\@afterheading
 }
+
+% Formatação do capítulo \chapter* para exibição na página onde foi definido
 \def\@makeschapterhead#1{%
   \addvspace{18pt}
   \reset@font\centerline{\unisc@chapterfont\textbf{\MakeUppercase{#1}}}
   \addvspace{18pt}
 }
+
+% Comando \annex para indicar o início dos anexos
+\newcounter{ii@appendix}
 \renewcommand{\appendix}[1][\appendixname]{%
-  \setcounter{chapter}{0}%
-  \renewcommand{\thechapter}{\Alph{chapter}}%
+  \setcounter{ii@appendix}{0}%
+  \renewcommand{\thechapter}{\Alph{ii@appendix}}%
   \setcounter{tocdepth}{0}%
-  \@captionlistingfalse%
-  \gdef\@chapapp{\MakeUppercase{#1}\space}%
-  \addtocontents{toc}{%
-    \settowidth{\unisc@chapnumindent}{{\sffamily\textbf{\@chapapp}}}%
-    \addtolength{\unisc@chapnumindent}{1.8em}%
-  }%
+  \gdef\@appendixname{#1}
+  \@appendixchaptertrue
 }
 \newcommand{\annex}{\appendix[\annexname]}
 
@@ -570,3 +590,4 @@
   \end{list}%
   \addvspace{5cm}%
 }
+
