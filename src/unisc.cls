@@ -218,7 +218,7 @@
 }
 
 \newcommand{\titlepagetopinfocapa}{%
-  \MakeUppercase{\textbf{\@course}}
+  \texorpdfstring{\MakeUppercase{\textbf{\@course}}}{\textbf{\@course}}
 }
 \def\@winboxcapa{%
   \parbox[b]{\titlepagewinwidth}{%
@@ -226,7 +226,7 @@
       \vspace*{5cm}
       \@authora\\
       \vspace*{3cm}
-      \textbf{\MakeUppercase{\@title}}\par
+      \textbf{\texorpdfstring{\MakeUppercase{\@title}}{\@title}}\par
       \vspace*{3cm}
     }
   }%
@@ -420,10 +420,10 @@
   \par
   \if@appendixchapter%
     \refstepcounter{ii@appendix}%
-    \addcontentsline{toc}{chapter}{\MakeUppercase{\@appendixname}~\thechapter~--~\MakeUppercase{#1}}%
+    \addcontentsline{toc}{chapter}{\texorpdfstring{\MakeUppercase{\@appendixname}}{\@appendixname}~\thechapter~--~\texorpdfstring{\MakeUppercase{#1}}{#1}}%
   \else%
     \refstepcounter{chapter}%
-    \addcontentsline{toc}{chapter}{\protect\numberline{\thechapter}\MakeUppercase{#1}}%
+    \addcontentsline{toc}{chapter}{\protect\numberline{\thechapter}\texorpdfstring{\MakeUppercase{#1}}{#1}}%
   \fi%
   \addtocontents{lof}{\protect}%
   \addtocontents{lot}{\protect}%
@@ -434,9 +434,9 @@
 % Formatação do capítulo \chapter para exibição na página onde foi definido
 \def\@makechapterhead#1{%
   \if@appendixchapter%
-    \reset@font\centerline{\unisc@chapterfont\noindent\textbf{\MakeUppercase{\@appendixname}~\thechapter~--~\MakeUppercase{#1}}}%
+    \reset@font\centerline{\unisc@chapterfont\noindent\textbf{\texorpdfstring{\MakeUppercase{\@appendixname}}{\@appendixname}~\thechapter~--~\texorpdfstring{\MakeUppercase{#1}}{#1}}}%
   \else%
-    \reset@font{\unisc@chapterfont\noindent\textbf{\thechapter~\MakeUppercase{#1}}}%
+    \reset@font{\unisc@chapterfont\noindent\textbf{\thechapter~\texorpdfstring{\MakeUppercase{#1}}{#1}}}%
   \fi%
   \vspace{12pt}
 }
@@ -445,7 +445,7 @@
 % Implementação do comando \chapter*{Título} para capítulos não numerados
 \def\@schapter#1{%
   \if@aftertoc%
-    \addcontentsline{toc}{chapter}{\MakeUppercase{#1}}%
+    \addcontentsline{toc}{chapter}{\texorpdfstring{\MakeUppercase{#1}}{#1}}%
     \pagestyle{unisc}\let\ps@plain\ps@unisc%
   \fi%
   \addtocontents{lof}{\protect\addvspace{10\p@}}%
@@ -456,7 +456,7 @@
 % Formatação do capítulo \chapter* para exibição na página onde foi definido
 \def\@makeschapterhead#1{%
   \addvspace{18pt}
-  \reset@font\centerline{\unisc@chapterfont\textbf{\MakeUppercase{#1}}}
+  \reset@font\centerline{\unisc@chapterfont\textbf{\texorpdfstring{\MakeUppercase{#1}}{#1}}}
   \addvspace{18pt}
 }
 
