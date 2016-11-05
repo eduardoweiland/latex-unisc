@@ -434,7 +434,9 @@
 % Formatação do capítulo \chapter para exibição na página onde foi definido
 \def\@makechapterhead#1{%
   \if@appendixchapter%
-    \reset@font\centerline{\unisc@chapterfont\noindent\textbf{\texorpdfstring{\MakeUppercase{\@appendixname}}{\@appendixname}~\thechapter~--~\texorpdfstring{\MakeUppercase{#1}}{#1}}}%
+    \begin{center}%
+      \reset@font{\unisc@chapterfont\noindent\textbf{\texorpdfstring{\MakeUppercase{\@appendixname}}{\@appendixname}~\thechapter~--~\texorpdfstring{\MakeUppercase{#1}}{#1}}}%
+    \end{center}%
   \else%
     \reset@font{\unisc@chapterfont\noindent\textbf{\thechapter~\texorpdfstring{\MakeUppercase{#1}}{#1}}}%
   \fi%
