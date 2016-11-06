@@ -59,6 +59,18 @@ Se for utilizado o pacote `glossaries` (já incluído na classe) para criar a li
 
 Para citar alguma entrada das referências durante o texto, é utilizado o pacote `abntex2cite-alf`. A documentação dos comandos utilizados para criar os vários estilos de referências existentes pode ser encontrada na [documentação do pacote][abnTeX2cite].
 
+## Desenvolvimento
+
+### Processo de release
+
+* Garantir que todas as modificações que serão publicadas estão no branch master
+* Alterar o número da versão na declaração da classe unisc em `src/unisc.cls`
+* Listar as modificações da versão em `CHANGELOG.md`
+* Alterar a versão exibida no badge no `README.md`
+* Criar um commit com as alterações nos três arquivos com a mensagem "Lançada versão x.y.z" (`git commit -m "Lançada versão x.y.z"`)
+* Criar uma tag com "v" seguido do número da versão e a mensagem "Versão x.y.z" (`git tag -am "Versão x.y.z" vx.y.z`)
+* Enviar tudo para o GitHub (`git push origin master --tags`)
+
 ## Referências
 
 AGNES, C.; HELFER, I. _Normas para apresentação de trabalhos acadêmicos_. 1. ed. atual. Santa Cruz do Sul, RS: EDUNISC, 2013. ISBN 9788575782033.
