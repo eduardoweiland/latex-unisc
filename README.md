@@ -77,6 +77,6 @@ AGNES, C.; HELFER, I. _Normas para apresentação de trabalhos acadêmicos_. 1. 
 
 
 [ShareLaTeX]: https://pt.sharelatex.com "ShareLaTeX - Online LaTeX Editor"
-[Normas UNISC]: http://www.unisc.br/portal/pt/editora/e-books/88/normas-para-apresentacao-de-trabalhos-academicos.html "Normas para apresentação de trabalhos acadêmicos"
+[Normas UNISC]: http://www.unisc.br/editora/e_books_normas.pdf "Normas para apresentação de trabalhos acadêmicos"
 [manual-glossaries]: http://mirrors.ctan.org/macros/latex/contrib/glossaries/glossaries-user.pdf "User Manual for glossaries"
 [abnTeX2cite]: http://repositorios.cpai.unb.br/ctan/macros/latex/contrib/abntex2/doc/abntex2cite-alf.pdf
