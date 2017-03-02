@@ -2,7 +2,7 @@
 % unisc.cls - classe para documentos com padrões da UNISC
 % Parcialmente baseado no antigo modelo do dinfunisc e no modelo do iiufrgs
 %
-% Copyright (C) 2015 - 2016 Eduardo Weiland <eduardo@eduardoweiland.info>
+% Copyright (C) 2015 - 2017 Eduardo Weiland <eduardo@eduardoweiland.info>
 %
 % This work may be distributed and/or modified under the
 % conditions of the LaTeX Project Public License, either version 1.3
