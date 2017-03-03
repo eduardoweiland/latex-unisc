@@ -63,7 +63,12 @@
 \LoadClass[12pt,a4paper,oneside]{report}
 
 % Definições de nomes padrão (capítulos, seções, legendas, etc.)
-\input{namedefs.babel}
+% Carrega apenas no início do documento para utilizar os idiomas carregados no babel
+\AtBeginDocument{%
+  \makeatletter%
+  \input{namedefs.babel}%
+  \makeatother%
+}
 
 \RequirePackage{xargs}             % Criação de comandos com vários argumentos opcionais
 \RequirePackage{indentfirst}
