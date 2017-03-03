@@ -1,5 +1,5 @@
 # Modelo LaTeX UNISC
-[![Versão v1.1.1](https://img.shields.io/badge/Vers%C3%A3o-v1.1.1-brightgreen.svg)](CHANGELOG.md)
+[![Versão v1.1.2](https://img.shields.io/badge/Vers%C3%A3o-v1.1.2-brightgreen.svg)](CHANGELOG.md)
 [![Licença LPPL 1.3c](https://img.shields.io/badge/Licen%C3%A7a-LPPL_1.3c-blue.svg)](LICENSE)
 [![Documentação WIP](https://img.shields.io/badge/Docs-WIP-red.svg)](https://github.com/eduardoweiland/latex-unisc/wiki)
 [![Issues](https://img.shields.io/github/issues/eduardoweiland/latex-unisc.svg)](https://github.com/eduardoweiland/latex-unisc/issues)

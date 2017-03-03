@@ -1,5 +1,11 @@
 # Histórico do Modelo LaTeX UNISC
 
+## v1.1.2 (02 mar. 2017)
+
+Essa é uma versão que contém apenas correção de bugs, sem alteração de outras funcionalidades.
+
+* [#12](https://github.com/eduardoweiland/latex-unisc/issues/12) [BUGFIX] Erro relacionado ao Babel ao compilar um projeto no ShareLaTeX
+
 ## v1.1.1 (05 nov. 2016)
 
 Essa é uma versão que contém apenas correção de bugs, sem alteração de outras funcionalidades.
