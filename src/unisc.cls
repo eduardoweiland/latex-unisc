@@ -24,7 +24,7 @@
 % Identificação
 %==============================================================================
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{unisc}[2017/03/02 v1.1.2 Formatacao de documentos para a UNISC]
+\ProvidesClass{unisc}[2017/05/14 v1.2.0 Formatacao de documentos para a UNISC]
 
 %==============================================================================
 % Declaração de opções

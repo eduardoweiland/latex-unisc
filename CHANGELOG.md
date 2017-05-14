@@ -1,5 +1,11 @@
 # Histórico do Modelo LaTeX UNISC
 
+## v1.2.0 (14 mai. 2017)
+
+Essa versão atualiza o modelo de acordo com a segunda edição das normas da UNISC.
+
+* [#14](https://github.com/eduardoweiland/latex-unisc/issues/14) [UPDATE] Atualização das normas para 2017 - Sumário
+
 ## v1.1.2 (02 mar. 2017)
 
 Essa é uma versão que contém apenas correção de bugs, sem alteração de outras funcionalidades.
