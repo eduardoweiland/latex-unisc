@@ -7,7 +7,9 @@
 
 Este projeto contém o modelo LaTeX para escrita de trabalhos seguindo as normas da Universidade de Santa Cruz do Sul (UNISC).
 
-O modelo segue as [normas para apresentação de trabalhos da UNISC][Normas UNISC] (AGNES; HELFER, 2013). Se encontrar algum caso onde o modelo não está de acordo com as normas, crie um [issue](https://github.com/eduardoweiland/latex-unisc/issues/new) para que esse problema seja corrigido.
+O modelo segue as [normas para apresentação de trabalhos da UNISC][Normas UNISC 2013] (AGNES; HELFER, 2013). Se encontrar algum caso onde o modelo não está de acordo com as normas, crie um [issue](https://github.com/eduardoweiland/latex-unisc/issues/new) para que esse problema seja corrigido.
+
+A [segunda edição das normas da UNISC][Normas UNISC 2017] foi publicada neste ano. As alterações que foram encontradas já foram realizadas na classe do LaTeX UNISC, mas é possível que algum detalhe não tenha sido ajustado. Se você encontrar mais alguma alteração que precisa ser feita, crie um [issue](https://github.com/eduardoweiland/latex-unisc/issues/new).
 
 ## Utilização do modelo
 
@@ -78,10 +80,13 @@ Para citar alguma entrada das referências durante o texto, é utilizado o pacot
 
 ## Referências
 
-AGNES, C.; HELFER, I. _Normas para apresentação de trabalhos acadêmicos_. 1. ed. atual. Santa Cruz do Sul, RS: EDUNISC, 2013. ISBN 9788575782033.
+AGNES, C.; HELFER, I. _Normas para apresentação de trabalhos acadêmicos_. 1. ed. atual. Santa Cruz do Sul, RS: EDUNISC, 2013. ISBN 978-85-7578-203-3. Disponível em: <<http://www.unisc.br/editora/e_books_normas.pdf>>.
+
+HELFER, I.; HAAS, H.; AGNES, C. _Normas para apresentação de trabalhos acadêmicos_. 2. ed. Santa Cruz do Sul, RS: EDUNISC, 2017. ISBN 978-85-7578-448-8. Disponível em: <<http://www.unisc.br/pt/home/editora/e-books>>.
 
 
 [ShareLaTeX]: https://pt.sharelatex.com "ShareLaTeX - Online LaTeX Editor"
-[Normas UNISC]: http://www.unisc.br/editora/e_books_normas.pdf "Normas para apresentação de trabalhos acadêmicos"
+[Normas UNISC 2013]: http://www.unisc.br/editora/e_books_normas.pdf "Normas para apresentação de trabalhos acadêmicos - 1ª edição"
+[Normas UNISC 2017]: http://unisc.br/images/upload/com_editora_livro/EbookNormas2017.pdf "Normas para apresentação de trabalhos acadêmicos - 2ª edição"
 [manual-glossaries]: http://mirrors.ctan.org/macros/latex/contrib/glossaries/glossaries-user.pdf "User Manual for glossaries"
 [abnTeX2cite]: http://repositorios.cpai.unb.br/ctan/macros/latex/contrib/abntex2/doc/abntex2cite-alf.pdf
