@@ -332,6 +332,7 @@
 \settocstylefeature{pagenumberbox}{\pnbox}
 
 \settocfeature[toc]{entryvskip}{-4pt}
+\settocfeature[toc][0]{entryvskip}{6pt}
 \settocfeature[toc]{entryhook}{\bfseries}
 \settocfeature[lof][1]{entryhook}{\figurename~\hskip\leftskip}
 \settocfeature[lot][1]{entryhook}{\tablename~\hskip\leftskip}
