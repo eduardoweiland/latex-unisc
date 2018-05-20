@@ -53,8 +53,8 @@
   \def\reviewernamef{Avaliadora}%
   \def\advisorname{Orientador}%
   \def\advisornamef{Orientadora}%
-  \def\coadvisorname{Co-orientador}%
-  \def\coadvisornamef{Co-orientadora}%
+  \def\coadvisorname{Coorientador}%
+  \def\coadvisornamef{Coorientadora}%
   \def\listabbrvname{Lista de Abreviaturas}%
   \def\listsymbolname{Lista de S{\'i}mbolos}%
   \def\annexname{Anexo}%
