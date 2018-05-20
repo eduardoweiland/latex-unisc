@@ -30,7 +30,9 @@
 \newcommand{\titlepageadvisorinfo}{%
   \begin{center}
     \@ifundefined{@advisor}{}{\@advisor\\\@advisornamethis\\}
-    \@ifundefined{@coadvisor}{}{\vspace*{1cm}\@coadvisor\\\@coadvisornamethis\\}
+    \@ifundefined{@coadvisora}{}{\vspace*{1cm}\@coadvisora\\\@coadvisornamethisa\\}
+    \@ifundefined{@coadvisorb}{}{\vspace*{1cm}\@coadvisorb\\\@coadvisornamethisb\\}
+    \@ifundefined{@coadvisorc}{}{\vspace*{1cm}\@coadvisorc\\\@coadvisornamethisc\\}
     \vspace*{1cm}
     \@ifundefined{@reviewera}{}{\@reviewera\\}
     \@ifundefined{@reviewerb}{}{\@reviewerb\\}

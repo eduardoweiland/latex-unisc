@@ -143,17 +143,20 @@
   \gdef\@advisor{#1~#3 #2}
   \gdef\@advisornamethis{\advisornamef}
 }
+\newcounter{ii@coadvisorcount}
 \DeclareRobustCommand{\coadvisor}[3][]{
-  \gdef\@coadvisorlast{#2}
-  \gdef\@coadvisorfirst{#3}
-  \gdef\@coadvisor{#1~#3 #2}
-  \gdef\@coadvisornamethis{\coadvisorname}
+  \addtocounter{ii@coadvisorcount}{1}
+  \expandafter\gdef\csname @coadvisor\alph{ii@coadvisorcount}last\endcsname{#2}
+  \expandafter\gdef\csname @coadvisor\alph{ii@coadvisorcount}first\endcsname{#3}
+  \expandafter\gdef\csname @coadvisor\alph{ii@coadvisorcount}\endcsname{#1~#3 #2}
+  \expandafter\gdef\csname @coadvisornamethis\alph{ii@coadvisorcount}\endcsname{\coadvisorname}
 }
 \DeclareRobustCommand{\coadvisorF}[3][]{
-  \gdef\@coadvisorlast{#2}
-  \gdef\@coadvisorfirst{#3}
-  \gdef\@coadvisor{#1~#3 #2}
-  \gdef\@coadvisornamethis{\coadvisornamef}
+  \addtocounter{ii@coadvisorcount}{1}
+  \expandafter\gdef\csname @coadvisor\alph{ii@coadvisorcount}last\endcsname{#2}
+  \expandafter\gdef\csname @coadvisor\alph{ii@coadvisorcount}first\endcsname{#3}
+  \expandafter\gdef\csname @coadvisor\alph{ii@coadvisorcount}\endcsname{#1~#3 #2}
+  \expandafter\gdef\csname @coadvisornamethis\alph{ii@coadvisorcount}\endcsname{\coadvisornamef}
 }
 \newcounter{ii@reviewercount}
 \DeclareRobustCommand{\reviewer}[3][]{

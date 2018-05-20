@@ -27,7 +27,9 @@
   \hspace*{\fill}\makebox[.53\textwidth][l]{%
     \parbox[b]{8.5cm}{%
       \@ifundefined{@advisor}{}{\@advisornamethis:~\@advisor\\}
-      \@ifundefined{@coadvisor}{}{\@coadvisornamethis:~\@coadvisor\\}
+      \@ifundefined{@coadvisora}{}{\@coadvisornamethisa:~\@coadvisora\\}
+      \@ifundefined{@coadvisorb}{}{\@coadvisornamethisb:~\@coadvisorb\\}
+      \@ifundefined{@coadvisorc}{}{\@coadvisornamethisc:~\@coadvisorc\\}
     }
   }
   \vfill
