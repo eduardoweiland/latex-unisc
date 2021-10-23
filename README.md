@@ -16,6 +16,8 @@ A [segunda edição das normas da UNISC][Normas UNISC 2017] foi publicada neste 
 **[:rocket: INÍCIO RÁPIDO](https://github.com/eduardoweiland/latex-unisc/wiki#instala%C3%A7%C3%A3o)**
 &nbsp;&nbsp;&nbsp;
 **[:book: TODAS AS OPÇÕES](https://github.com/eduardoweiland/latex-unisc/wiki/Op%C3%A7%C3%B5es-da-classe)**
+&nbsp;&nbsp;&nbsp;
+**[:bug: PROBLEMAS COMUNS](#problemas-comuns)**
 
 A documentação para utilizar esse modelo ainda está sendo escrita e está bem incompleta. O que já existe hoje está disponível na [Wiki](https://github.com/eduardoweiland/latex-unisc/wiki). Em caso de dúvidas específicas sobre a utilização do modelo, crie um [issue](https://github.com/eduardoweiland/latex-unisc/issues/new) descrevendo a dúvida e, assim que possível, essas dúvidas serão resolvidas e documentadas.
 
@@ -65,6 +67,12 @@ Se for utilizado o pacote `glossaries` (já incluído na classe) para criar a li
 ## Usando citações
 
 Para citar alguma entrada das referências durante o texto, é utilizado o pacote `abntex2cite-alf`. A documentação dos comandos utilizados para criar os vários estilos de referências existentes pode ser encontrada na [documentação do pacote][abnTeX2cite].
+
+## Problemas comuns
+
+### `LaTeX Error: File 'tocstyle.sty' not found.`
+
+O pacote `tocstyle` está obsoleto, e o modelo ainda não foi atualizado para usar o substituto, `tocbasic`. Ver o [issue #19](https://github.com/eduardoweiland/latex-unisc/issues/19#issuecomment-950043826) para uma solução paliativa.
 
 ## Desenvolvimento
 
