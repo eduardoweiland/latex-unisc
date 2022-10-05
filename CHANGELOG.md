@@ -1,5 +1,11 @@
 # Histórico do Modelo LaTeX UNISC
 
+## v1.3.0 (05 out. 2022)
+
+Essa versão adiciona suporte inicial para a terceira edição das normas da UNISC.
+
+* [#21](https://github.com/eduardoweiland/latex-unisc/issues/21) [UPDATE] Formatar o et al. com itálico
+
 ## v1.2.0 (14 mai. 2017)
 
 Essa versão atualiza o modelo de acordo com a segunda edição das normas da UNISC.
