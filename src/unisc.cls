@@ -13,7 +13,7 @@
 % version 2005/12/01 or later.
 %
 % This work has the LPPL maintenance status `maintained'.
-% 
+%
 % The Current Maintainer of this work is Eduardo Weiland.
 %
 % This work consists of the files unisc.cls, namedefs.babel, tc.def
@@ -95,7 +95,7 @@
   allcolors=\@linkcolor
 ]{hyperref}
 
-\RequirePackage[alf]{abntex2cite}  % Estilo de referências da ABNT
+\RequirePackage[alf,abnt-etal-text=emph]{abntex2cite}  % Estilo de referências da ABNT
 
 \makeglossaries
 
